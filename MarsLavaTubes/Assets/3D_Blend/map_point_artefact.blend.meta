@@ -1,10 +1,18 @@
 fileFormatVersion: 2
-guid: 2366e2699dc4843dfbee2dd5968d7085
-timeCreated: 1428754950
+guid: 2404186cd7d2b44ac838a717a1f30c89
+timeCreated: 1428755864
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
+    4300002: map_point_artefact
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
