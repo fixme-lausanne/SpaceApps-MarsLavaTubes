@@ -13,12 +13,19 @@ public class main : MonoBehaviour {
 	
 	// Upd ate is called once per frame
 	void Update () {
-		print ("tests caméra");
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
 		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
 		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
 		transform.position -= new Vector3 (sideSpeed, forwardSpeed, zoomSpeed);
+
+		if (Input.GetMouseButtonDown(0))
+		{
+			RaycastHit hitInfo = new RaycastHit();
+			bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+
+		} 
 	}
+
 
 
 }
