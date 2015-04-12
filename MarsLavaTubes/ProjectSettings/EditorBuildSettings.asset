@@ -7,9 +7,3 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Start.unity
-  - enabled: 1
-    path: Assets/intro.unity
-  - enabled: 1
-    path: Assets/game_survival.unity
-  - enabled: 1
-    path: Assets/GameOver.unity
