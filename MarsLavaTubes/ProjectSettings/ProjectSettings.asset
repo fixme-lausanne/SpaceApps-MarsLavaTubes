@@ -255,6 +255,7 @@ PlayerSettings:
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
   scriptingDefineSymbols:
+    2: 
     4: 
   metroPackageName: MarsLavaTubes
   metroPackageLogo: 
