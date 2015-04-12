@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class command_Center : MonoBehaviour {
+public class command_Center : MonoBehaviourWithSelection {
 
 	public GameObject mRoverInit;
 	private bool instanceInit;
-
+	private GUILayer test;
+	public NavMeshAgent agentNav;
 
 	// Use this for initialization
 	void Start () {
@@ -13,22 +14,32 @@ public class command_Center : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update() {
 	}
 
 	// On collision with something
 	void OnCollisionEnter(Collision collision) {
-/*
-		foreach (ContactPoint contact in collision.contacts) {
-			print ("Contact ");
-			if ((contact.Equals (GameObject.Find ("map"))) && 
-*/
+
 		if(instanceInit == false)
 		{
 			print ("Contact Mars !");
-			GameObject roverInit = Instantiate (mRoverInit);
+			GameObject roverExplo = Instantiate (mRoverInit);
+
+			roverInit rover = roverExplo.GetComponent<roverInit>() ;
+			rover.target = GameObject.Find ("map_point_target");
 			instanceInit = true;
+		}
+	}
+
+	public new void OnSelection(GameObject oldSelection) {
+		
+		print ("Command center selected, ancien objet : "+oldSelection.name);
+		
+		if (oldSelection != null) {
+			if (oldSelection.name == "rover_exploration(Clone)") {
+				roverInit rover = oldSelection.GetComponent<roverInit>() ;
+				rover.target = GameObject.Find (this.name);
+			}
 		}
 	}
 }

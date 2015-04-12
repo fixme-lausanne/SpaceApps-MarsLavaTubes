@@ -1,42 +1,62 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class roverInit : MonoBehaviour {
 
-	float speed;
+public class roverInit : MonoBehaviourWithSelection {
+
 	public GameObject target;
+	public NavMeshAgent agentNav;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		print ("Exploration rover ready !");
-		target = GameObject.Find ("map_point_target");
-		speed = 1;
+		agentNav = GetComponent<NavMeshAgent> ();
+		agentNav.speed = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		float step = speed * Time.deltaTime;
-		transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-
+		if (target != null) {
+			agentNav.SetDestination (target.transform.position);
+		}	
 	}
 
+	// Update is called once per frame
+	void Start () {
+		if (target != null) {
+			print ("Rover Target is "+target.name);
+		}	
+	}
+	
 	// On collision with something
 	void OnCollisionEnter(Collision collision) {
 
-		print ("rover collision !"+collision.collider.gameObject.name);
-		if (collision.collider.gameObject.name == "map_point_target")
+		if (collision.collider.gameObject.name != "map")
+		{
+			print ("rover collision !"+collision.collider.gameObject.name);
+		}
+
+		if ((collision.collider.gameObject.name == "map_point_target") ||
+		    (collision.collider.gameObject.name == "map_point_cratere") ||
+		    (collision.collider.gameObject.name == "map_point_artefact"))
 			{
-			target = GameObject.Find ("command_center");
-			print ("get ressources !");
+				print ("get ressources !");
+				//todo get the ressources
+				target = GameObject.Find ("command_center");
 			}
-			else if (collision.collider.gameObject.name == "Command_center_Collision_mesh_001")
+			else if (collision.collider.gameObject.name == "command_center")
 			{
-			print ("get ressources and destroy !");
-			Object.Destroy(GameObject.Find("rover_init(Clone)"));
+				print ("get ressources and destroy !");
+				Object.Destroy(this.gameObject);
 			}
 	}
 
-	void OnSelection() {
+	public new void OnSelection(GameObject oldSelectionName) {
 
-		print ("rover selected, ancien objet : ");
+		print ("rover selected, ancien objet : "+oldSelectionName);
+	}
+
+	public new void OnDeSelection(GameObject newSelectionName) {
+		print ("rover deselected, new objet : "+newSelectionName);
 	}
 }
