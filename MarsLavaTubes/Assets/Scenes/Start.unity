@@ -120,7 +120,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 47}
+  m_AnchoredPosition: {x: 0, y: 214}
   m_SizeDelta: {x: 280, y: 80}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &64028807
@@ -263,7 +263,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Humanity has finally set foot on Mars, and you were chosen to be a member
-    of the first expedition. Will you survive on this hostile  planet?
+    of the first expedition. Will you survive on this hostile planet?
 
 
     Use your limited amount of supplies wisely as you explore the  underground lava
