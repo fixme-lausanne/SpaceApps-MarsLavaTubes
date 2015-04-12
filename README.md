@@ -1,4 +1,4 @@
-Marse One (and a half)
+Mars One (and a half)
 ======================
 
 * Space Apps 2015 project
