@@ -92,10 +92,13 @@ public class SurvivalEngine : MonoBehaviour
 		//Day passes
 		if (Time.fixedTime % cycle_len == 0) {
 			day += 1;
-			ConsumeLifeSupportPerDay ();
-			ProduceResource ();
+
+			ConsumeLifeSupport ();
 			ConsumeProduction ();
-			Suvivival ();
+			ProduceResource ();
+
+			CheckDepletion();
+			HumanSuvivival ();
 			GameOver ();
 		}
 
@@ -111,45 +114,53 @@ public class SurvivalEngine : MonoBehaviour
 		txt_propulsion.text = "Propulsion=" + propulsion;
 	}
 
-	void ConsumeLifeSupportPerDay ()
+	void CheckDepletion ()
 	{
 		txt_message.text = "";
-		power -= conso_human_power * population;
-		if (power < 0) {
+		if (power <= 0) {
 			power = 0;
 			txt_message.text += "\nOut of power !";
 		}
-		water -= conso_human_water * population;
-		if (water < 0) {
+		if (water <= 0) {
 			water = 0;
 			txt_message.text += "\nOut of water !";
 		}
-		food -= conso_human_food * population;
-		if (food < 0) {
+		if (food <= 0) {
 			food = 0;
 			txt_message.text += "\nOut of food !";
 		}
-		oxygen -= conso_human_oxygen * population;
-		if (oxygen < 0) {
+		if (oxygen <= 0) {
 			oxygen = 0;
 			txt_message.text += "\nOut of oxygen !";
 		}
 	}
 
+	void ConsumeLifeSupport ()
+	{
+		power -= conso_human_power * population;
+		water -= conso_human_water * population;
+		food -= conso_human_food * population;
+		oxygen -= conso_human_oxygen * population;
+	}
+
 	void ConsumeProduction ()
 	{
-		water -= conso_prod_food_water;
-		power -= conso_prod_food_power;
+		if (power > 0) {
+			water -= conso_prod_food_water;
+			power -= conso_prod_food_power;
+		}
 	}
 
 	void ProduceResource ()
 	{
-		oxygen += prod_oxygen;
 		power += prod_power;
-		food += prod_food;
+		if (water > 0 && power > 0) {
+			oxygen += prod_oxygen;
+			food += prod_food;
+		}
 	}
 
-	void Suvivival ()
+	void HumanSuvivival ()
 	{
 		// Count days without resources
 		if (food <= 0) {
@@ -181,7 +192,7 @@ public class SurvivalEngine : MonoBehaviour
 
 	void GameOver ()
 	{
-		if (population == 0) {
+		if (population <= 0) {
 			Application.LoadLevel ("GameOver");
 		}
 	}
