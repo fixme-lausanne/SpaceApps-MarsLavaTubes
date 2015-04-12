@@ -31,13 +31,13 @@ public class roverInit : MonoBehaviourWithSelection {
 	// On collision with something
 	void OnCollisionEnter(Collision collision) {
 
-		if (collision.collider.gameObject.name != "map")
+		if (collision.collider.gameObject.name != "map_collision_mesh")
 		{
 			print ("rover collision !"+collision.collider.gameObject.name);
 		}
 
 		if ((collision.collider.gameObject.name == "map_point_target") ||
-		    (collision.collider.gameObject.name == "map_point_cratere") ||
+		    (collision.collider.gameObject.name == "map_point_crater") ||
 		    (collision.collider.gameObject.name == "map_point_artefact"))
 			{
 				print ("get ressources !");
