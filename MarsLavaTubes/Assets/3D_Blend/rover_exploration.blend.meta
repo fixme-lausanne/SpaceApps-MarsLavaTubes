@@ -1,10 +1,114 @@
 fileFormatVersion: 2
-guid: 2e2ad519ce46542359c1e3b63806984c
-timeCreated: 1428754950
+guid: fefafba723cb94fd48448860bca1217b
+timeCreated: 1428758839
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: Circle
+    100002: Circle_001
+    100004: Circle_002
+    100006: Circle_004
+    100008: Cube
+    100010: Cube_001
+    100012: grab_cam_arm
+    100014: grab_cam_arm_001
+    100016: //RootNode
+    100018: Circle_003
+    100020: Circle_005
+    100022: Cube_002
+    100024: Cube_003
+    100026: Cube_004
+    100028: Cube_005
+    100030: Cube_006
+    100032: Cube_007
+    100034: Cube_008
+    100036: grab_cam_arm_002
+    100038: grab_cam_arm_003
+    100040: grab_cam_arm_004
+    400000: Circle
+    400002: Circle_001
+    400004: Circle_002
+    400006: Circle_004
+    400008: Cube
+    400010: Cube_001
+    400012: grab_cam_arm
+    400014: grab_cam_arm_001
+    400016: //RootNode
+    400018: Circle_003
+    400020: Circle_005
+    400022: Cube_002
+    400024: Cube_003
+    400026: Cube_004
+    400028: Cube_005
+    400030: Cube_006
+    400032: Cube_007
+    400034: Cube_008
+    400036: grab_cam_arm_002
+    400038: grab_cam_arm_003
+    400040: grab_cam_arm_004
+    2300000: Circle
+    2300002: Circle_001
+    2300004: Circle_002
+    2300006: Circle_004
+    2300008: Cube
+    2300010: Cube_001
+    2300012: grab_cam_arm
+    2300014: grab_cam_arm_001
+    2300016: Circle_003
+    2300018: Circle_005
+    2300020: Cube_002
+    2300022: Cube_003
+    2300024: Cube_004
+    2300026: Cube_005
+    2300028: Cube_006
+    2300030: Cube_007
+    2300032: Cube_008
+    2300034: grab_cam_arm_002
+    2300036: grab_cam_arm_003
+    2300038: grab_cam_arm_004
+    3300000: Circle
+    3300002: Circle_001
+    3300004: Circle_002
+    3300006: Circle_004
+    3300008: Cube
+    3300010: Cube_001
+    3300012: grab_cam_arm
+    3300014: grab_cam_arm_001
+    3300016: Circle_003
+    3300018: Circle_005
+    3300020: Cube_002
+    3300022: Cube_003
+    3300024: Cube_004
+    3300026: Cube_005
+    3300028: Cube_006
+    3300030: Cube_007
+    3300032: Cube_008
+    3300034: grab_cam_arm_002
+    3300036: grab_cam_arm_003
+    3300038: grab_cam_arm_004
+    4300000: grab_cam_arm_001
+    4300002: Circle_002
+    4300004: Cube_001
+    4300006: Circle_004
+    4300008: grab_cam_arm
+    4300010: Circle_001
+    4300012: Circle
+    4300014: Cube
+    4300016: grab_cam_arm_004
+    4300018: grab_cam_arm_003
+    4300020: Circle_005
+    4300022: grab_cam_arm_002
+    4300024: Cube_008
+    4300026: Cube_007
+    4300028: Cube_006
+    4300030: Circle_003
+    4300032: Cube_002
+    4300034: Cube_003
+    4300036: Cube_004
+    4300038: Cube_005
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0

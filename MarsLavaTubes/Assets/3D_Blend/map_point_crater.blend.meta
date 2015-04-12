@@ -1,10 +1,17 @@
 fileFormatVersion: 2
-guid: 4c112e8514a7c44769e6916b4b5b66b1
-timeCreated: 1428754950
+guid: 18c677b978b824635965c2d5495b5c65
+timeCreated: 1428755864
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: map_point_crater
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0

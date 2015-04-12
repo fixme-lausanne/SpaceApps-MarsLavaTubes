@@ -1,10 +1,26 @@
 fileFormatVersion: 2
-guid: 98eabeff0378640a4932abcd8dc7689e
-timeCreated: 1428754951
+guid: dcbc42806a66c46c39ab5ed0f424cfa9
+timeCreated: 1428755867
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: lava_tube_indicator
+    100002: //RootNode
+    100004: map_point_lava_tube
+    400000: lava_tube_indicator
+    400002: //RootNode
+    400004: map_point_lava_tube
+    2300000: lava_tube_indicator
+    2300002: map_point_lava_tube
+    2300004: //RootNode
+    3300000: lava_tube_indicator
+    3300002: map_point_lava_tube
+    3300004: //RootNode
+    4300000: lava_tube_indicator
+    4300002: map_point_lava_tube
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0

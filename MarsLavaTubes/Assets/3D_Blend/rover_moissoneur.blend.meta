@@ -1,10 +1,94 @@
 fileFormatVersion: 2
-guid: 555998d540d234f2d9acc860ea8b0feb
-timeCreated: 1428754950
+guid: 7bbd7122ee29d46bba09347ce5d50722
+timeCreated: 1428758830
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: Circle
+    100002: Circle_001
+    100004: Circle_002
+    100006: Circle_003
+    100008: Cube_001
+    100010: Cube_002
+    100012: Cube_003
+    100014: Cube_004
+    100016: Cube_005
+    100018: Cube_006
+    100020: Cube_007
+    100022: Cube_008
+    100024: grab_cam_arm_000
+    100026: grab_cam_arm_001
+    100028: //RootNode
+    100030: block_bird
+    100032: hardpoint_base_tower
+    400000: Circle
+    400002: Circle_001
+    400004: Circle_002
+    400006: Circle_003
+    400008: Cube_001
+    400010: Cube_002
+    400012: Cube_003
+    400014: Cube_004
+    400016: Cube_005
+    400018: Cube_006
+    400020: Cube_007
+    400022: Cube_008
+    400024: grab_cam_arm_000
+    400026: grab_cam_arm_001
+    400028: //RootNode
+    400030: block_bird
+    400032: hardpoint_base_tower
+    2300000: Circle
+    2300002: Circle_001
+    2300004: Circle_002
+    2300006: Circle_003
+    2300008: Cube_001
+    2300010: Cube_002
+    2300012: Cube_003
+    2300014: Cube_004
+    2300016: Cube_005
+    2300018: Cube_006
+    2300020: Cube_007
+    2300022: Cube_008
+    2300024: grab_cam_arm_000
+    2300026: grab_cam_arm_001
+    2300028: block_bird
+    2300030: hardpoint_base_tower
+    3300000: Circle
+    3300002: Circle_001
+    3300004: Circle_002
+    3300006: Circle_003
+    3300008: Cube_001
+    3300010: Cube_002
+    3300012: Cube_003
+    3300014: Cube_004
+    3300016: Cube_005
+    3300018: Cube_006
+    3300020: Cube_007
+    3300022: Cube_008
+    3300024: grab_cam_arm_000
+    3300026: grab_cam_arm_001
+    3300028: block_bird
+    3300030: hardpoint_base_tower
+    4300000: Cube_008
+    4300002: Cube_007
+    4300004: Cube_006
+    4300006: Cube_005
+    4300008: Cube_004
+    4300010: Cube_003
+    4300012: Cube_002
+    4300014: Circle_003
+    4300016: grab_cam_arm_000
+    4300018: grab_cam_arm_001
+    4300020: Circle_002
+    4300022: Cube_001
+    4300024: Circle_001
+    4300026: Circle
+    4300028: hardpoint_base_tower
+    4300030: block_bird
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
