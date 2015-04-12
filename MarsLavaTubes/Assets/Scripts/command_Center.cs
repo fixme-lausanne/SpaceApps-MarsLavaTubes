@@ -23,7 +23,7 @@ public class command_Center : MonoBehaviourWithSelection {
 		if(instanceInit == false)
 		{
 			print ("Contact Mars !");
-			GameObject overExplo = Instantiate (mRoverInit);
+			//GameObject overExplo = Instantiate (mRoverInit);
 
 			roverInit rover = mRoverInit.GetComponent<roverInit>() ;
 			rover.target = GameObject.Find ("map_point_target");
