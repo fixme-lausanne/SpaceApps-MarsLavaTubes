@@ -29,7 +29,7 @@ public class SurvivalEngine : MonoBehaviour
 	// production
 	int prod_power;
 	int prod_oxygen;
-	int prod_mining;
+	//int prod_mining;
 	int prod_food;
 
 	// UI texts
@@ -62,7 +62,7 @@ public class SurvivalEngine : MonoBehaviour
 		conso_prod_food_water = 100; // with recycling
 		conso_prod_food_power = 1;
 
-		prod_mining = 0;
+		//prod_mining = 0;
 		prod_power = 500; // solar
 		prod_oxygen = 10;
 		prod_food = 1;
@@ -73,11 +73,12 @@ public class SurvivalEngine : MonoBehaviour
 
 	void Update ()
 	{
+		GameOver ();
 		if (Time.fixedTime % cycle_len == 0) {
 			day += 1;
 			ConsumeLifeSupportPerDay ();
 			ProduceResource ();
-			ConsumeProduction();
+			ConsumeProduction ();
 		}
 
 		// UI Update
@@ -117,7 +118,8 @@ public class SurvivalEngine : MonoBehaviour
 		}
 	}
 
-	void ConsumeProduction(){
+	void ConsumeProduction ()
+	{
 		water -= conso_prod_food_water;
 		power -= conso_prod_food_power;
 	}
@@ -127,5 +129,12 @@ public class SurvivalEngine : MonoBehaviour
 		oxygen += prod_oxygen;
 		power += prod_power;
 		food += prod_food;
+	}
+
+	void GameOver ()
+	{
+		if (population == 0) {
+			Application.LoadLevel ("GameOver");
+		}
 	}
 }
