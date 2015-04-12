@@ -26,11 +26,19 @@ public class SurvivalEngine : MonoBehaviour
 	int conso_prod_food_power;
 	int conso_prod_food_water;
 
+	// Survival
+	int surv_human_oxygen;
+	int surv_human_food;
+	int surv_human_water;
+	int surv_depleted_oxygen;
+	int surv_depleted_food;
+	int surv_depleted_water;
+	
 	// production
 	int prod_power;
 	int prod_oxygen;
-	//int prod_mining;
 	int prod_food;
+	//int prod_mining;
 
 	// UI texts
 	public Text txt_power;
@@ -52,19 +60,27 @@ public class SurvivalEngine : MonoBehaviour
 		power = 1000;
 		water = 10000;
 		food = 10000;
-		oxygen = 10000;
+		oxygen = 1000;
 		ore = 0;
 
 		conso_human_water = 4;
 		conso_human_food = 10;
 		conso_human_power = 5;
-		conso_human_oxygen = 1;
+		conso_human_oxygen = 2;
 		conso_prod_food_water = 100; // with recycling
 		conso_prod_food_power = 1;
 
+		//Survival
+		surv_human_oxygen = 1;
+		surv_human_food = 7;
+		surv_human_water = 3;
+		surv_depleted_oxygen = 0;
+		surv_depleted_food = 0;
+		surv_depleted_water = 0;
+
 		//prod_mining = 0;
 		prod_power = 500; // solar
-		prod_oxygen = 10;
+		prod_oxygen = 1;
 		prod_food = 1;
 		
 		lifesupport = 0;
@@ -73,12 +89,17 @@ public class SurvivalEngine : MonoBehaviour
 
 	void Update ()
 	{
-		GameOver ();
+		//Day passes
 		if (Time.fixedTime % cycle_len == 0) {
 			day += 1;
-			ConsumeLifeSupportPerDay ();
-			ProduceResource ();
+
+			ConsumeLifeSupport ();
 			ConsumeProduction ();
+			ProduceResource ();
+
+			CheckDepletion();
+			HumanSuvivival ();
+			GameOver ();
 		}
 
 		// UI Update
@@ -93,47 +114,85 @@ public class SurvivalEngine : MonoBehaviour
 		txt_propulsion.text = "Propulsion=" + propulsion;
 	}
 
-	void ConsumeLifeSupportPerDay ()
+	void CheckDepletion ()
 	{
 		txt_message.text = "";
-		power -= conso_human_power * population;
-		if (power < 0) {
+		if (power <= 0) {
 			power = 0;
 			txt_message.text += "\nOut of power !";
 		}
-		water -= conso_human_water * population;
-		if (water < 0) {
+		if (water <= 0) {
 			water = 0;
 			txt_message.text += "\nOut of water !";
 		}
-		food -= conso_human_food * population;
-		if (food < 0) {
+		if (food <= 0) {
 			food = 0;
 			txt_message.text += "\nOut of food !";
 		}
-		oxygen -= conso_human_oxygen * population;
-		if (oxygen < 0) {
+		if (oxygen <= 0) {
 			oxygen = 0;
 			txt_message.text += "\nOut of oxygen !";
 		}
 	}
 
+	void ConsumeLifeSupport ()
+	{
+		power -= conso_human_power * population;
+		water -= conso_human_water * population;
+		food -= conso_human_food * population;
+		oxygen -= conso_human_oxygen * population;
+	}
+
 	void ConsumeProduction ()
 	{
-		water -= conso_prod_food_water;
-		power -= conso_prod_food_power;
+		if (power > 0) {
+			water -= conso_prod_food_water;
+			power -= conso_prod_food_power;
+		}
 	}
 
 	void ProduceResource ()
 	{
-		oxygen += prod_oxygen;
 		power += prod_power;
-		food += prod_food;
+		if (water > 0 && power > 0) {
+			oxygen += prod_oxygen;
+			food += prod_food;
+		}
+	}
+
+	void HumanSuvivival ()
+	{
+		// Count days without resources
+		if (food <= 0) {
+			surv_depleted_food += 1;
+		} else {
+			surv_depleted_food = 0;
+		}
+		if (oxygen <= 0) {
+			surv_depleted_oxygen += 1;
+		} else {
+			surv_depleted_oxygen = 0;
+		}
+		if (water <= 0) {
+			surv_depleted_water += 1;
+		} else {
+			surv_depleted_water = 0;
+		}
+		//Decrease population
+		if (surv_depleted_food >= surv_human_food) {
+			population -= 1;
+		}
+		if (surv_depleted_oxygen >= surv_human_oxygen) {
+			population -= 1;
+		}
+		if (surv_depleted_water >= surv_human_water) {
+			population -= 1;
+		}
 	}
 
 	void GameOver ()
 	{
-		if (population == 0) {
+		if (population <= 0) {
 			Application.LoadLevel ("GameOver");
 		}
 	}
