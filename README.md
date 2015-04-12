@@ -14,5 +14,5 @@ sustainable ecosystem.
 
 ![](./Screenshots/InGame.PNG)
 ![](./Screenshots/Start.PNG)
-![](./Screenshots/GameOver.PNG)
+![](./Screenshots/GameOver.png)
 
