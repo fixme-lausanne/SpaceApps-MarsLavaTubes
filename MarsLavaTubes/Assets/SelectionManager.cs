@@ -13,40 +13,46 @@ public class SelectionManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetMouseButtonDown(0)) {
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if (Input.GetMouseButtonDown (0)) { // Right clic
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			
-			if (Physics.Raycast(ray, out hit, 100)) {
-
+			if (Physics.Raycast (ray, out hit, 100)) {
 				if (hit.collider.transform == null)
 					return;
 
 				if (currentSelection != null) {
-					DestroyImmediate(currentSelection.GetComponent<Light>());
+					DestroyImmediate (currentSelection.GetComponent<Light> ());
 
 					if (oldLight != null) {
-						Light replacementLight = currentSelection.AddComponent<Light>();
-						System.Reflection.FieldInfo[] fields = oldLight.GetType().GetFields();
-						foreach (System.Reflection.FieldInfo field in fields)
-						{
-							field.SetValue(replacementLight, field.GetValue(oldLight));
+						Light replacementLight = currentSelection.AddComponent<Light> ();
+						System.Reflection.FieldInfo[] fields = oldLight.GetType ().GetFields ();
+						foreach (System.Reflection.FieldInfo field in fields) {
+							field.SetValue (replacementLight, field.GetValue (oldLight));
 						}
 					}
 				}
 
 				// Handle the cases where the Collider is either on the main structure or on a child
 				GameObject collided = hit.collider.transform.parent != null ? hit.collider.transform.parent.gameObject : hit.collider.transform.gameObject;
-				
 
-				if (selectables.Contains(collided)) {
-					oldLight = collided.GetComponent<Light>();
-					DestroyImmediate(collided.GetComponent<Light>());
-					Light lightSrc = collided.AddComponent<Light>();
-					lightSrc.color = new Color (0f,0.5f,1f,1f);
+				if (selectables.Contains (collided)) {
+					oldLight = collided.GetComponent<Light> ();
+					DestroyImmediate (collided.GetComponent<Light> ());
+					Light lightSrc = collided.AddComponent<Light> ();
+					lightSrc.color = new Color (0f, 0.5f, 1f, 1f);
 					lightSrc.intensity = 8f;
 					currentSelection = collided;
 				}
+			}
+		} else if (Input.GetMouseButton (1) && currentSelection != null && currentSelection.GetComponent<NavMeshAgent>() != null) { // Left clic
+
+			RaycastHit hit;
+			
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100)) {
+				NavMeshAgent nav = currentSelection.GetComponent<NavMeshAgent>();
+				nav.SetDestination(hit.point);
+				nav.Resume();
 			}
 		}
 	}
