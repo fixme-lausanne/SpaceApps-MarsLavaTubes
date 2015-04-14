@@ -9,6 +9,7 @@ public class MainLoop : MonoBehaviour
 	public GameObject mCamera;
 	public GameObject mRoverInit;
 	public GameObject mTarget;
+	public GameObject mSpawnPoint;
 
 	void Update ()
 	{
@@ -21,7 +22,7 @@ public class MainLoop : MonoBehaviour
 	
 		if (Input.GetKeyDown (KeyCode.R)) {
 
-			GameObject rover = Instantiate (mRoverInit);
+			GameObject rover = Instantiate (mRoverInit, mSpawnPoint.transform.position, mSpawnPoint.transform.rotation) as GameObject;
 			roverInit roverCmp = rover.GetComponent<roverInit> ();
 			roverCmp.target = mTarget;
 		}
