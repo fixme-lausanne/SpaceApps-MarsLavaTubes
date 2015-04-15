@@ -14,6 +14,7 @@ public class MainLoop : MonoBehaviour
 	public GameObject mSpawnPoint;
 	public GameObject mMapPoint;
 	public GameObject mCenter;
+	public GameObject mSun;
 
 	void Start ()
 	{
@@ -26,6 +27,9 @@ public class MainLoop : MonoBehaviour
 
 	void Update ()
 	{
+		// Sun rotation
+		mSun.transform.Rotate (new Vector3 (0.5f, 0, 0));
+
 		// Camera position
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
 		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
