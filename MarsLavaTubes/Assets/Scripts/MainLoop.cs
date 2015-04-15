@@ -21,9 +21,6 @@ public class MainLoop : MonoBehaviour
 	
 	int terrainSize;
 	int featureNumber;
-	float scrollSpeed;
-	float camSpeed;
-	public GameObject mCamera;
 	public GameObject mRoverInit;
 	public GameObject mTarget;
 	public GameObject mSpawnPoint;
@@ -35,8 +32,6 @@ public class MainLoop : MonoBehaviour
 	{
 		terrainSize = 15;
 		featureNumber = 30;
-		scrollSpeed = 500;
-		camSpeed = 10;
 		GeneratePoints ();
 	}
 
@@ -44,12 +39,6 @@ public class MainLoop : MonoBehaviour
 	{
 		// Sun rotation
 		mSun.transform.Rotate (new Vector3 (0.5f, 0, 0));
-
-		// Camera position
-		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
-		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
-		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
-		mCamera.transform.position += new Vector3 (forwardSpeed, -zoomSpeed, -sideSpeed);
 	
 		if (Input.GetKeyDown (KeyCode.R)) {
 

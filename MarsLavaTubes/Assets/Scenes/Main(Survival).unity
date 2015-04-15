@@ -890,7 +890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69dbaf8b14f253c4194269b8e6106881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mCamera: {fileID: 542356739}
   mRoverInit: {fileID: 174894, guid: 66a481c3aaa3f412d842deb8221145bb, type: 2}
   mTarget: {fileID: 1366561202}
   mSpawnPoint: {fileID: 2072820110}
@@ -1007,6 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6e0ca450caaff4390b4d03095fe072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mMap: {fileID: 1055850059}
 --- !u!136 &542356746
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1319,6 +1319,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1028847331}
+--- !u!1 &1055850059 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: 9e2593f751d0a474cb49a426c94ecd99, type: 3}
+  m_PrefabInternal: {fileID: 158452198}
 --- !u!1 &1057054660
 GameObject:
   m_ObjectHideFlags: 0

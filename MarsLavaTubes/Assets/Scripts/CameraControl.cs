@@ -18,6 +18,31 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour
 {
+	public GameObject mMap;
+	float scrollSpeed;
+	float camSpeed;
+
+	void Start ()
+	{
+		scrollSpeed = 500;
+		camSpeed = 10;
+	}
+
+	void Update ()
+	{
+
+		// Camera position
+		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
+		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
+		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed/2;
+		
+		if (Vector3.Distance (transform.position, mMap.transform.position) < 10f && zoomSpeed > 0) {
+			zoomSpeed = 0;
+		}
+
+		transform.position += new Vector3 (forwardSpeed, -zoomSpeed, -sideSpeed);
+	}
+
 	void OnTriggerEnter (Collider col)
 	{
 		print ("Camera hit " + col.name);
