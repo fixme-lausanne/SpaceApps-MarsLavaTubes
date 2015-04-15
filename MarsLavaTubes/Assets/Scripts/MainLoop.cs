@@ -43,11 +43,13 @@ public class MainLoop : MonoBehaviour
 	void GeneratePoints ()
 	{
 		Vector2 randomPoint;
+		int randomHeight;
 		float randomRotation;
 		for (int i=0; i<featureNumber; i++) {
 			randomPoint = Random.insideUnitCircle * terrainSize;
 			randomRotation = Random.Range (0f, 180f);
-			Instantiate (mMapPoint, mCenter.transform.position + new Vector3 (randomPoint.x, 0, randomPoint.y), Quaternion.Euler (new Vector3 (-90, randomRotation, 0)));
+			randomHeight = Random.Range (0, 5);
+			Instantiate (mMapPoint, mCenter.transform.position + new Vector3 (randomPoint.x, randomHeight, randomPoint.y), Quaternion.Euler (new Vector3 (-90, randomRotation, 0)));
 		}
 	}
 	
