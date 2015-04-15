@@ -49,11 +49,11 @@ public class CameraControl : MonoBehaviour
 
 		// Camera rotation
 		int rotx;
-		if (distanceToMap > 40f) {
+		if (distanceToMap > 50f) {
 			camSpeed = 80;
 			scrollSpeed = 4800;
 			rotx = 90;
-		} else if (distanceToMap > 35f) {
+		} else if (distanceToMap > 40f) {
 			camSpeed = 70;
 			scrollSpeed = 3500;
 			rotx = 84;
@@ -61,23 +61,23 @@ public class CameraControl : MonoBehaviour
 			camSpeed = 60;
 			scrollSpeed = 2400;
 			rotx = 75;
-		} else if (distanceToMap > 25f) {
+		} else if (distanceToMap > 20f) {
 			camSpeed = 50;
 			scrollSpeed = 1600;
 			rotx = 64;
-		} else if (distanceToMap > 20f) {
+		} else if (distanceToMap > 15f) {
 			camSpeed = 40;
 			scrollSpeed = 1200;
 			rotx = 60;
-		} else if (distanceToMap > 15f) {
+		} else if (distanceToMap > 10f) {
 			camSpeed = 30;
 			scrollSpeed = 900;
 			rotx = 54;
-		} else if (distanceToMap > 10f) {
+		} else if (distanceToMap > 5f) {
 			camSpeed = 20;
 			scrollSpeed = 600;
 			rotx = 45;
-		} else if (distanceToMap > 5f) {
+		} else if (distanceToMap > 2f) {
 			camSpeed = 10;
 			scrollSpeed = 300;
 			rotx = 34;

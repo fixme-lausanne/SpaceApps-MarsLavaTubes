@@ -21,6 +21,7 @@ public class MainLoop : MonoBehaviour
 	
 	int terrainSize;
 	int featureNumber;
+	public int currentRoverNb;
 	public GameObject mRoverInit;
 	public GameObject mTarget;
 	public GameObject mSpawnPoint;
@@ -30,6 +31,7 @@ public class MainLoop : MonoBehaviour
 
 	void Start ()
 	{
+		currentRoverNb = 10;
 		terrainSize = 15;
 		featureNumber = 30;
 		GeneratePoints ();
@@ -40,11 +42,12 @@ public class MainLoop : MonoBehaviour
 		// Sun rotation
 		mSun.transform.Rotate (new Vector3 (0.5f, 0, 0));
 	
-		if (Input.GetKeyDown (KeyCode.R)) {
+		if (Input.GetKeyDown (KeyCode.R) && currentRoverNb > 0) {
 
 			GameObject rover = Instantiate (mRoverInit, mSpawnPoint.transform.position, mSpawnPoint.transform.rotation) as GameObject;
 			roverInit roverCmp = rover.GetComponent<roverInit> ();
 			roverCmp.target = mTarget;
+			currentRoverNb -= 1;
 		}
 	}
 

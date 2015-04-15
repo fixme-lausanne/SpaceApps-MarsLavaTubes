@@ -23,8 +23,6 @@ public class SurvivalEngine : MonoBehaviour
 	public int cycle_len;
 	public int day;
 	public int population;
-	public int lifesupport;
-	public int propulsion;
 
 	// resources
 	public int power; // kW/h
@@ -62,11 +60,11 @@ public class SurvivalEngine : MonoBehaviour
 	public Text txt_water;
 	public Text txt_food;
 	public Text txt_ore;
-	public Text txt_lifesupport;
-	public Text txt_propulsion;
 	public Text txt_day;
 	public Text txt_pop;
+	public Text txt_rover;
 	public Text txt_message;
+	public MainLoop mainLoop;
 
 	void Start ()
 	{
@@ -98,9 +96,6 @@ public class SurvivalEngine : MonoBehaviour
 		prod_power = 500; // solar
 		prod_oxygen = 1;
 		prod_food = 1;
-		
-		lifesupport = 0;
-		propulsion = 0;
 	}
 
 	void Update ()
@@ -118,6 +113,7 @@ public class SurvivalEngine : MonoBehaviour
 		CheckDepletion ();
 
 		// UI Update
+		txt_rover.text = "Rover=" + mainLoop.currentRoverNb;
 		txt_pop.text = "Population=" + population;
 		txt_day.text = "CurrentDay=" + day;
 		txt_power.text = "Power=" + power;
@@ -125,8 +121,6 @@ public class SurvivalEngine : MonoBehaviour
 		txt_food.text = "Food=" + food;
 		txt_oxygen.text = "Oxygen=" + oxygen;
 		txt_ore.text = "Ore=" + ore;
-		txt_lifesupport.text = "LifeSupport=" + lifesupport;
-		txt_propulsion.text = "Propulsion=" + propulsion;
 	}
 
 	void CheckDepletion ()

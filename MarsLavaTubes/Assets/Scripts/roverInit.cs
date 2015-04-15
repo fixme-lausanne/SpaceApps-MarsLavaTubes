@@ -19,6 +19,7 @@ using System.Collections;
 public class roverInit : MonoBehaviourWithSelection
 {
 
+	public MainLoop mainLoop;
 	public GameObject target;
 	public NavMeshAgent agentNav;
 
@@ -59,6 +60,7 @@ public class roverInit : MonoBehaviourWithSelection
 			target = GameObject.Find ("command_center");
 		} else if (collision.collider.gameObject.name == "Command_center_Collision_mesh_001") {
 			print ("get ressources and destroy !");
+			mainLoop.currentRoverNb += 1;
 			Object.Destroy (this.gameObject);
 		}
 	}
