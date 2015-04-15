@@ -11,7 +11,7 @@ public class roverInit : MonoBehaviourWithSelection
 	{
 		print ("Exploration rover ready !");
 		agentNav = GetComponent<NavMeshAgent> ();
-		agentNav.speed = 1;
+		//agentNav.speed = 0.1f;
 	}
 
 	void Start ()
