@@ -48,6 +48,7 @@ public class SurvivalEngine : MonoBehaviour
 	int surv_depleted_oxygen;
 	int surv_depleted_food;
 	int surv_depleted_water;
+	bool populationDecreasing;
 	
 	// production
 	int prod_power;
@@ -111,11 +112,10 @@ public class SurvivalEngine : MonoBehaviour
 			ConsumeLifeSupport ();
 			ConsumeProduction ();
 			ProduceResource ();
-
-			CheckDepletion();
 			HumanSuvivival ();
 			GameOver ();
 		}
+		CheckDepletion ();
 
 		// UI Update
 		txt_pop.text = "Population=" + population;
@@ -147,6 +147,9 @@ public class SurvivalEngine : MonoBehaviour
 		if (oxygen <= 0) {
 			oxygen = 0;
 			txt_message.text += "\nOut of oxygen !";
+		}
+		if (populationDecreasing) {
+			txt_message.text += "\nPopulation is decreasing !";
 		}
 	}
 
@@ -194,14 +197,18 @@ public class SurvivalEngine : MonoBehaviour
 			surv_depleted_water = 0;
 		}
 		//Decrease population
+		populationDecreasing = false;
 		if (surv_depleted_food >= surv_human_food) {
 			population -= 1;
+			populationDecreasing = true;
 		}
 		if (surv_depleted_oxygen >= surv_human_oxygen) {
 			population -= 1;
+			populationDecreasing = true;
 		}
 		if (surv_depleted_water >= surv_human_water) {
 			population -= 1;
+			populationDecreasing = true;
 		}
 	}
 
