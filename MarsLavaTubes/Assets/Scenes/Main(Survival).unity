@@ -980,7 +980,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: .100000001
-  far clip plane: 80
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 30
@@ -1033,23 +1033,68 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  animSpeed:
+  animMoveSpeed:
     serializedVersion: 2
     m_Curve:
-    - time: .0761577636
-      value: 5.06904697
-      inSlope: 1.17844653
-      outSlope: 1.17844653
+    - time: .012315765
+      value: 5.10365868
+      inSlope: 2.45862889
+      outSlope: 2.45862889
       tangentMode: 10
-    - time: 39.5924721
-      value: 51.6369095
-      inSlope: 1.17844653
-      outSlope: 18.6496906
-      tangentMode: 21
-    - time: 50.133503
-      value: 248.223877
-      inSlope: 18.6496925
-      outSlope: 18.6496925
+    - time: 1.99590158
+      value: 9.9805603
+      inSlope: 2.87873745
+      outSlope: 2.87873745
+      tangentMode: 10
+    - time: 5.02631617
+      value: 19.9774303
+      inSlope: 2.66188145
+      outSlope: 2.66188145
+      tangentMode: 10
+    - time: 9.98248482
+      value: 30.0132618
+      inSlope: 2.0010376
+      outSlope: 2.0010376
+      tangentMode: 10
+    - time: 15.028121
+      value: 39.9892807
+      inSlope: 1.9939369
+      outSlope: 1.9939369
+      tangentMode: 10
+    - time: 20.0106812
+      value: 50.0077934
+      inSlope: 1.50327289
+      outSlope: 1.50327289
+      tangentMode: 10
+    - time: 30.0405254
+      value: 59.9958115
+      inSlope: .99924469
+      outSlope: .99924469
+      tangentMode: 10
+    - time: 40.0400772
+      value: 70.0219574
+      inSlope: .994288445
+      outSlope: .994288445
+      tangentMode: 10
+    - time: 50.0003204
+      value: 79.8419342
+      inSlope: .985917389
+      outSlope: .985917389
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  animScrollSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - time: .0118880086
+      value: 100.132065
+      inSlope: 97.7689743
+      outSlope: 97.7689743
+      tangentMode: 10
+    - time: 50.1260681
+      value: 4999.74414
+      inSlope: 97.7689743
+      outSlope: 97.7689743
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1932,7 +1977,7 @@ Camera:
     width: .5
     height: .5
   near clip plane: .00999999978
-  far clip plane: 100
+  far clip plane: 30
   field of view: 77.8000031
   orthographic: 0
   orthographic size: 5
@@ -2158,7 +2203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1967136834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46, y: -35.0999985, z: -4.4000001}
+  m_LocalPosition: {x: -46, y: -132.600006, z: -4.4000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 62406238}

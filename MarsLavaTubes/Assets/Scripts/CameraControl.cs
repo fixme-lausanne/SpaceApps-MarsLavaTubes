@@ -19,7 +19,8 @@ using System.Collections;
 public class CameraControl : MonoBehaviour
 {
 	public AnimationCurve animRotation;
-	public AnimationCurve animSpeed;
+	public AnimationCurve animMoveSpeed;
+	public AnimationCurve animScrollSpeed;
 	float scrollSpeed;
 	float camSpeed;
 
@@ -36,8 +37,8 @@ public class CameraControl : MonoBehaviour
 		}
 		
 		// Camera speed
-		camSpeed = animSpeed.Evaluate (distanceToGround);
-		scrollSpeed = camSpeed * 10;
+		camSpeed = animMoveSpeed.Evaluate (distanceToGround);
+		scrollSpeed = animScrollSpeed.Evaluate (distanceToGround);
 
 		// Camera position
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
