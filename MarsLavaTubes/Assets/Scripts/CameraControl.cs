@@ -26,8 +26,6 @@ public class CameraControl : MonoBehaviour
 
 	void Start ()
 	{
-		scrollSpeed = 500;
-		camSpeed = 10;
 	}
 
 	void Update ()
@@ -40,6 +38,7 @@ public class CameraControl : MonoBehaviour
 		
 		// Camera speed
 		camSpeed = animSpeed.Evaluate (distanceToGround);
+		scrollSpeed = camSpeed*10;
 
 		// Camera position
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
@@ -51,10 +50,5 @@ public class CameraControl : MonoBehaviour
 		float rotx = animRotation.Evaluate (distanceToGround);
 		Quaternion newrot = Quaternion.Euler (rotx, 90, 0);
 		transform.rotation = Quaternion.Slerp (transform.rotation, newrot, distanceToGround);
-	}
-
-	void OnTriggerEnter (Collider col)
-	{
-		print ("Camera hit " + col.name);
 	}
 }
