@@ -49,7 +49,8 @@ public class CameraControl : MonoBehaviour
 
 		// Camera orientation
 		float rotx = animRotation.Evaluate (distanceToGround);
-		transform.rotation = Quaternion.Euler (rotx, 90, 0);
+		Quaternion newrot = Quaternion.Euler (rotx, 90, 0);
+		transform.rotation = Quaternion.Slerp (transform.rotation, newrot, distanceToGround);
 	}
 
 	void OnTriggerEnter (Collider col)
