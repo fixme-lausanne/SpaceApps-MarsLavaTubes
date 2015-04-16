@@ -1015,6 +1015,7 @@ GameObject:
   - 136: {fileID: 542356746}
   - 114: {fileID: 542356745}
   - 45: {fileID: 542356747}
+  - 95: {fileID: 542356748}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1099,6 +1100,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mMap: {fileID: 1055850059}
+  animRotation:
+    serializedVersion: 2
+    m_Curve:
+    - time: .0476157367
+      value: 29.9346809
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 50.7432404
+      value: 90.0965958
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  animSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - time: .0761577636
+      value: 5.06904697
+      inSlope: 1.17844653
+      outSlope: 1.17844653
+      tangentMode: 10
+    - time: 39.5924721
+      value: 51.6369095
+      inSlope: 1.17844653
+      outSlope: 18.6496906
+      tangentMode: 21
+    - time: 50.133503
+      value: 248.223877
+      inSlope: 18.6496925
+      outSlope: 18.6496925
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!136 &542356746
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1120,6 +1156,23 @@ Skybox:
   m_GameObject: {fileID: 542356739}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 07d203538f3b719458b4723efc2666ae, type: 2}
+--- !u!95 &542356748
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542356739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4ace3a5e0d6b9541a40a69d1180b281, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &597912516
 GameObject:
   m_ObjectHideFlags: 0

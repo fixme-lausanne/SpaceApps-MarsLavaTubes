@@ -19,6 +19,8 @@ using System.Collections;
 public class CameraControl : MonoBehaviour
 {
 	public GameObject mMap;
+	public AnimationCurve animRotation;
+	public AnimationCurve animSpeed;
 	float scrollSpeed;
 	float camSpeed;
 
@@ -30,17 +32,24 @@ public class CameraControl : MonoBehaviour
 
 	void Update ()
 	{
+		float distanceToGround = 0;
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, Vector3.down, out hit)) {
+			distanceToGround = hit.distance;
+		}
+		
+		// Camera speed
+		camSpeed = animSpeed.Evaluate (distanceToGround);
 
 		// Camera position
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
 		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
-		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed/2;
-		
-		if (Vector3.Distance (transform.position, mMap.transform.position) < 10f && zoomSpeed > 0) {
-			zoomSpeed = 0;
-		}
-
+		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
 		transform.position += new Vector3 (forwardSpeed, -zoomSpeed, -sideSpeed);
+
+		// Camera orientation
+		float rotx = animRotation.Evaluate (distanceToGround);
+		transform.rotation = Quaternion.Euler (rotx, 90, 0);
 	}
 
 	void OnTriggerEnter (Collider col)
