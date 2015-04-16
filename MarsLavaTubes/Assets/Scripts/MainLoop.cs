@@ -59,7 +59,7 @@ public class MainLoop : MonoBehaviour
 		for (int i=0; i<featureNumber; i++) {
 			randomPoint = Random.insideUnitCircle * terrainSize;
 			randomRotation = Random.Range (0f, 180f);
-			randomHeight = Random.Range (0f, 1f);
+			randomHeight = Random.Range (0f, 0.5f);
 			Instantiate (mMapPoint, mCenter.transform.position + new Vector3 (randomPoint.x, randomHeight, randomPoint.y), Quaternion.Euler (new Vector3 (-90, randomRotation, 0)));
 		}
 	}

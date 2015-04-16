@@ -18,8 +18,6 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour
 {
-	public GameObject mBlocker;
-	public GameObject mMap;
 	public AnimationCurve animRotation;
 	public AnimationCurve animSpeed;
 	float scrollSpeed;
@@ -39,12 +37,15 @@ public class CameraControl : MonoBehaviour
 		
 		// Camera speed
 		camSpeed = animSpeed.Evaluate (distanceToGround);
-		scrollSpeed = camSpeed*10;
+		scrollSpeed = camSpeed * 10;
 
 		// Camera position
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
 		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
 		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
+		if ((distanceToGround <= 1f && zoomSpeed > 0) || (distanceToGround >= 64f && zoomSpeed < 0)) {
+			zoomSpeed = 0;
+		}
 		transform.position += new Vector3 (forwardSpeed, -zoomSpeed, -sideSpeed);
 
 		// Camera orientation
