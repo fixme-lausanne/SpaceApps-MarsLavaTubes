@@ -1101,15 +1101,15 @@ MonoBehaviour:
   animScrollSpeed:
     serializedVersion: 2
     m_Curve:
-    - time: .0118880086
-      value: 100.132065
-      inSlope: 97.7689743
-      outSlope: 97.7689743
+    - time: .0047889296
+      value: 49.5881195
+      inSlope: 38.8428841
+      outSlope: 38.8428841
       tangentMode: 10
-    - time: 50.1260681
-      value: 4999.74414
-      inSlope: 97.7689743
-      outSlope: 97.7689743
+    - time: 49.9371338
+      value: 1989.10449
+      inSlope: 38.8428841
+      outSlope: 38.8428841
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2

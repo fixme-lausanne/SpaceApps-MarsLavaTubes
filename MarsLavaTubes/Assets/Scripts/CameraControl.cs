@@ -44,6 +44,12 @@ public class CameraControl : MonoBehaviour
 		float forwardSpeed = Input.GetAxis ("Vertical") * Time.deltaTime * camSpeed;
 		float sideSpeed = Input.GetAxis ("Horizontal") * Time.deltaTime * camSpeed;
 		float zoomSpeed = Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
+		if ((transform.position.x > -25 && forwardSpeed > 0) || (transform.position.x < -100 && forwardSpeed < 0)) {
+			forwardSpeed = 0;
+		}
+		if ((transform.position.z > 75 && sideSpeed < 0) || (transform.position.z < -75 && sideSpeed > 0)) {
+			sideSpeed = 0;
+		}
 		if ((distanceToGround <= 1f && zoomSpeed > 0) || (distanceToGround >= 64f && zoomSpeed < 0)) {
 			zoomSpeed = 0;
 		}
