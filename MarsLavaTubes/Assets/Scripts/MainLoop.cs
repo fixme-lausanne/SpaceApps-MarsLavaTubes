@@ -28,6 +28,7 @@ public class MainLoop : MonoBehaviour
 	public GameObject mMapPoint;
 	public GameObject mCenter;
 	public GameObject mSun;
+	public AnimationCurve mSunRotation;
 
 	void Start ()
 	{
@@ -40,7 +41,9 @@ public class MainLoop : MonoBehaviour
 	void Update ()
 	{
 		// Sun rotation
-		mSun.transform.Rotate (new Vector3 (0.5f, 0, 0));
+		//float rotx = mSunRotation.Evaluate(Time.fixedTime) * 360;
+		//mSun.transform.rotation = Quaternion.Euler (new Vector3 (rotx, 0, 0));
+		mSun.transform.Rotate(new Vector3 (0.1f, 0, 0));
 	
 		if (Input.GetKeyDown (KeyCode.R) && currentRoverNb > 0) {
 

@@ -908,6 +908,21 @@ MonoBehaviour:
   mMapPoint: {fileID: 141052, guid: a3ee9b0d0ae823a47a36983c9d4c6268, type: 2}
   mCenter: {fileID: 882627353}
   mSun: {fileID: 1156367114}
+  mSunRotation:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &502088306
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,8 +1016,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 542356739}
-  m_LocalRotation: {x: .270598084, y: .65328151, z: -.270598084, w: .65328151}
-  m_LocalPosition: {x: -59.8150444, y: 6.39070082, z: 7.02622032}
+  m_LocalRotation: {x: .182983592, y: .683020532, z: -.182983592, w: .683020532}
+  m_LocalPosition: {x: -60.4444427, y: 4.98601055, z: 8.00776577}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1730,7 +1745,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156367114}
-  m_LocalRotation: {x: .173648223, y: 0, z: 0, w: .984807789}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: -44.7999992, y: 22, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
