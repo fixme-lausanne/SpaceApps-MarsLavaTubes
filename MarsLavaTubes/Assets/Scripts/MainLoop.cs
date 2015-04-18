@@ -43,7 +43,7 @@ public class MainLoop : MonoBehaviour
 		// Sun rotation
 		//float rotx = mSunRotation.Evaluate(Time.fixedTime) * 360;
 		//mSun.transform.rotation = Quaternion.Euler (new Vector3 (rotx, 0, 0));
-		mSun.transform.Rotate(new Vector3 (0.1f, 0, 0));
+		mSun.transform.Rotate (new Vector3 (0.1f, 0, 0));
 	
 		if (Input.GetKeyDown (KeyCode.R) && currentRoverNb > 0) {
 

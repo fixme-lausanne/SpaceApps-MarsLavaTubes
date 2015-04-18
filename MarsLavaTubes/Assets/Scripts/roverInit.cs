@@ -34,16 +34,18 @@ public class roverInit : MonoBehaviourWithSelection
 	{
 		if (target != null) {
 			print ("Rover Target is " + target.name);
-		}	
+		}
 	}
 
 	void Update ()
 	{
+		Camera.main.transform.position = transform.position - new Vector3(1.8f, -1f, 0f);
 		if (target != null) {
 			agentNav.SetDestination (target.transform.position);
 		}
 	}
-	
+
+	/*
 	// On collision with something
 	void OnCollisionEnter (Collision collision)
 	{
@@ -63,11 +65,11 @@ public class roverInit : MonoBehaviourWithSelection
 			mainLoop.currentRoverNb += 1;
 			Object.Destroy (this.gameObject);
 		}
-	}
+	}*/
 
 	public new void OnSelection (GameObject oldSelectionName)
 	{
-
+		//TODO: Change camera
 		print ("rover selected, ancien objet : " + oldSelectionName);
 	}
 

@@ -55,7 +55,7 @@ public class CameraControl : MonoBehaviour
 		}
 		transform.position += new Vector3 (forwardSpeed, -zoomSpeed, -sideSpeed);
 
-		// Camera orientation
+		// Camera orientations
 		float rotx = animRotation.Evaluate (distanceToGround);
 		Quaternion newrot = Quaternion.Euler (rotx, 90, 0);
 		transform.rotation = Quaternion.Slerp (transform.rotation, newrot, distanceToGround);
