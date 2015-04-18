@@ -1,4 +1,4 @@
-Marse One (and a half)
+Mars One (and a half)
 ======================
 
 * Space Apps 2015 project
@@ -13,4 +13,6 @@ in search of precious water, ice and minerals to  build a home base and a
 sustainable ecosystem.
 
 ![](./Screenshots/InGame.PNG)
+![](./Screenshots/Start.PNG)
+![](./Screenshots/GameOver.png)
 
